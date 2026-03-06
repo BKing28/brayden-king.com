@@ -152,6 +152,9 @@ button {
   margin: 0 auto;
   padding-left: var(--space-xl);
   padding-right: var(--space-xl);
+  position: relative;
+  z-index: 1;
+  background: var(--color-bg);
 }
 
 .home-intro {
@@ -172,6 +175,11 @@ button {
 
 .home-section {
   margin-bottom: var(--space-2xl);
+}
+
+.home-section:last-child {
+  margin-bottom: 4rem;
+  padding-bottom: var(--space-lg);
 }
 
 .home-section__title {
@@ -269,8 +277,6 @@ button {
   pointer-events: none;
   z-index: 0;
   overflow: hidden;
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, transparent 100%);
-  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, transparent 100%);
 }
 
 .binary-bg pre {
@@ -311,5 +317,14 @@ button {
 
   .photo-grid img:first-child {
     aspect-ratio: 3 / 2;
+  }
+
+  .binary-bg {
+    display: none;
+  }
+
+  .home-section:last-child {
+    margin-bottom: var(--space-lg);
+    padding-bottom: 0;
   }
 }
