@@ -20,17 +20,28 @@
   }
 
   function setActiveNav() {
-    var path = window.location.pathname.split('/').pop() || 'index.html';
+    var path = window.location.pathname.split('/').pop().replace('.html', '') || 'index';
     document.querySelectorAll('.nav__link').forEach(function (link) {
-      var href = link.getAttribute('href');
-      if (href === path || (path === '' && href === 'index.html')) {
+      var href = link.getAttribute('href').replace('.html', '');
+      if (href === path || (path === '' && href === 'index')) {
         link.classList.add('nav__link--active');
       }
+    });
+  }
+
+  function initProjects() {
+    document.querySelectorAll('.project-item').forEach(function (item) {
+      item.addEventListener('click', function () {
+        var wasActive = item.classList.contains('active');
+        document.querySelectorAll('.project-item').forEach(function (i) { i.classList.remove('active'); });
+        if (!wasActive) item.classList.add('active');
+      });
     });
   }
 
   document.addEventListener('DOMContentLoaded', function () {
     setActiveNav();
     initMobileMenu();
+    initProjects();
   });
 })();
