@@ -73,7 +73,7 @@
           + 0.5 * noise(nx * 2 + time * 0.3, r * 0.05 + time * 0.2)
           + 0.25 * noise(nx * 4 + time * 0.7, r * 0.1 + time * 0.4)
           + Math.sin(c * 0.03 + time * 1.2) * 0.3;
-        row += n > -0.2 + (1 - ny) * 1.8 ? staticGrid[r][c] : ' ';
+        row += n > -0.2 + (1 - ny) * 1.5 ? staticGrid[r][c] : ' ';
       }
       lines.push(row);
     }
