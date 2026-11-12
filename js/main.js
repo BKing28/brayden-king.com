@@ -235,6 +235,10 @@ function layout() {
   L = G;
   L.key = key;
   boot.settle(L);
+  if (!first && $('#sketch')) {
+    $('#sketch').remove();
+    boot.sketch(L);
+  }
 
   L.px = (v) => Math.round(v * L.dpr) / L.dpr;
   L.resLo = L.res * clamp(L.s0 * 1.5, 0.35, 0.8);
