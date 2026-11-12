@@ -354,14 +354,12 @@
       }
 
       .js .tagline,
-      .js nav,
-      .js .contact {
+      .js nav {
         opacity: var(--index, 1);
         will-change: opacity;
       }
 
-      .js .rail.open nav,
-      .js .rail.open .contact {
+      .js .rail.open nav {
         visibility: hidden;
       }
 
@@ -453,9 +451,14 @@
       }
 
       .js .contact {
-        flex-shrink: 0;
-        margin-top: auto;
-        padding: 0;
+        position: absolute;
+        left: calc(-1 * max(var(--pad), env(safe-area-inset-left, 0px)));
+        right: calc(-1 * max(var(--pad), env(safe-area-inset-right, 0px)));
+        bottom: 0;
+        bottom: calc(100svh - 100dvh);
+        padding: 0.6rem max(var(--pad), env(safe-area-inset-right, 0px)) max(1rem, env(safe-area-inset-bottom, 0px)) max(var(--pad), env(safe-area-inset-left, 0px));
+        background: var(--paper);
+        box-shadow: 0 -6px 10px 4px var(--paper);
       }
 
       .js .contact-line {
